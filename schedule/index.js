@@ -10,7 +10,15 @@ const typeDefs = gql`
 type Slot {
     roomId: ID!
     slotId: ID!
+    talk: Talk
     roomSetup: String
+}
+
+type Talk {
+    trackId: String
+    talkType: String
+    talkId: ID!
+    title: String
 }
 
 type Query {
