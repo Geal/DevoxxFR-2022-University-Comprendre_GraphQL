@@ -5,14 +5,19 @@ require("./opentelemetry.js");
 
 let data = JSON.parse(fs.readFileSync('../speakers.json'));
 const typeDefs = gql`
-type Speaker {
+type Speaker @key(fields: "link { href }") {
     firstName: String
     lastName: String
     twitter: String
+    link: Link
 }
 
 type Query {
-  speakers: [Speaker]
+    speakers: [Speaker]
+}
+
+type Link {
+    href: String
 }
 `
 
@@ -22,6 +27,12 @@ const resolvers = {
             return data;
         }
     },
+
+    Speaker: {
+        __resolveReference({link}, _) {
+            return data.find(speaker => speaker.links[0].href == link.href);
+        }
+    }
 };
 
 const server = new ApolloServer({

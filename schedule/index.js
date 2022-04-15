@@ -19,6 +19,15 @@ type Talk {
     talkType: String
     talkId: ID!
     title: String
+    speakers: [Speaker]
+}
+
+extend type Speaker @key(fields: "link { href }") {
+  link: Link @external
+}
+
+type Link {
+    href: String
 }
 
 type Query {
@@ -33,13 +42,17 @@ const resolvers = {
         }
     },
 
-    /*
-    MyEntity: {
-      __resolveReference(reference, context,info) {
-          return data
-      }
+    Talk: {
+        speakers(talk) {
+            return talk.speakers.map(speaker => {
+                if (speaker !== undefined && speaker.link !== undefined) {
+                    return {link:  { href: speaker.link.href } };
+                } else {
+                    return {};
+                }
+            });
+        }
     }
-    */
 };
 
 const server = new ApolloServer({
