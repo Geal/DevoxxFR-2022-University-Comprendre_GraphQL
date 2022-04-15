@@ -24,7 +24,14 @@ const resolvers = {
 };
 
 const server = new ApolloServer({
-    schema: buildSubgraphSchema({typeDefs, resolvers})
+    schema: buildSubgraphSchema({
+        typeDefs,
+        resolvers,
+        datasources: () => {
+            return {
+                TEMPLATE: data
+            }
+        }})
 });
 
 const port = 4001;

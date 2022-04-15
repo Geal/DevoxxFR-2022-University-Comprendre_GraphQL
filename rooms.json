@@ -1,0 +1,31 @@
+{
+    "content":"All rooms",
+    "rooms":[
+        {
+            "id":"a_hall",
+            "name":"Exhibition floor",
+            "capacity":2300,
+            "setup":"special"
+        },
+        {"id":"par242A","name":"Paris 242 A","capacity":60,"setup":"classroom"},
+        {"id":"par242B","name":"Paris 242 B","capacity":60,"setup":"classroom"},
+        {"id":"par243","name":"Paris 243","capacity":60,"setup":"classroom"},
+        {"id":"neu253","name":"Neuilly 253","capacity":60,"setup":"classroom"},
+        {"id":"par204","name":"Paris 204","capacity":16,"setup":"classroom"},
+        {"id":"par201","name":"Paris 201","capacity":14,"setup":"classroom"},
+        {"id":"b_amphi","name":"Amphi Bleu","capacity":826,"setup":"theatre"},
+        {"id":"c_maillot","name":"Maillot","capacity":380,"setup":"theatre"},
+        {"id":"f_neu251","name":"Neuilly 251","capacity":220,"setup":"theatre"},
+        {"id":"d_par241","name":"Paris 241","capacity":220,"setup":"theatre"},
+        {"id":"e_neu252","name":"Neuilly 252 AB","capacity":380,"setup":"theatre"},
+        {"id":"par242AB","name":"Paris 242 AB","capacity":280,"setup":"theatre"},
+        {"id":"par243_t","name":"Paris 243","capacity":120,"setup":"theatre"},
+        {"id":"neu253_t","name":"Neuilly 253","capacity":120,"setup":"theatre"},
+        {"id":"lab1","name":"Neuilly LAB 1","capacity":36,"setup":"classroom"},
+        {"id":"lab2","name":"Neuilly LAB 2","capacity":16,"setup":"classroom"},
+        {"id":"lab3","name":"Paris LAB 3","capacity":16,"setup":"classroom"},
+        {"id":"lab4","name":"Paris LAB 4","capacity":40,"setup":"classroom"},
+        {"id":"hall_paris","name":"Hall Exposition Paris","capacity":100,"setup":"special"},
+        {"id":"lobby_neuilly","name":"Lobby Neuilly","capacity":100,"setup":"special"}
+    ]
+}
