@@ -4,39 +4,35 @@ const fs = require('fs');
 require("./opentelemetry.js");
 
 let data = JSON.parse(fs.readFileSync('../speakers.json'));
-
 const typeDefs = gql`
 type Speaker {
     firstName: String
     lastName: String
 }
+
+type Query {
+  speakers: [Speaker]
+}
 `
 
 const resolvers = {
     Query: {
-        operation(parent, args, context, info) {
+        speakers: (parent, args, context, info) => {
             return data;
         }
     },
-
-    /*
-    MyEntity: {
-      __resolveReference(reference, context,info) {
-          return data
-      }
-    }
-    */
 };
 
 const server = new ApolloServer({
     schema: buildSubgraphSchema({
         typeDefs,
         resolvers,
-        datasources: () => {
+        dataSources: () => {
             return {
                 speakers: data
-            }
-        }})
+            };
+        },
+    })
 });
 
 const port = 4001;
