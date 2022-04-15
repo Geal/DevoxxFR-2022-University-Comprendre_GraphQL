@@ -5,7 +5,12 @@ require("./opentelemetry.js");
 
 let data = JSON.parse(fs.readFileSync('../speakers.json'));
 
-const typeDefs = gql``
+const typeDefs = gql`
+type Speaker {
+    firstName: String
+    lastName: String
+}
+`
 
 const resolvers = {
     Query: {
