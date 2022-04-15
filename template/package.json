@@ -1,0 +1,26 @@
+{
+    "name": "TEMPLATE",
+    "version": "1.0.0",
+    "description": "",
+    "main": "index.js",
+    "scripts": {
+        "test": "echo \"Error: no test specified\" && exit 1",
+        "start": "node index.js"
+    },
+    "keywords": [],
+    "author": "",
+    "license": "ISC",
+    "dependencies": {
+        "@apollo/subgraph": "^2.0.0",
+        "@opentelemetry/exporter-jaeger": "^1.0.1",
+        "@opentelemetry/instrumentation": "^0.27.0",
+        "@opentelemetry/instrumentation-express": "^0.28.0",
+        "@opentelemetry/instrumentation-graphql": "^0.27.4",
+        "@opentelemetry/instrumentation-http": "^0.27.0",
+        "@opentelemetry/node": "^0.24.0",
+        "@opentelemetry/resources": "^1.0.1",
+        "@opentelemetry/tracing": "^0.24.0",
+        "apollo-server": "^3.6.7",
+        "graphql": "^16.3.0"
+    }
+}
