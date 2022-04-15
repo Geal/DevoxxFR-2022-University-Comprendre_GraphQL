@@ -116,7 +116,7 @@ query ExampleQuery {
 }
 ```
 
-![](1-speakers-query.png)
+![](img/1-speakers-query.png)
 
 You can perform the same operation with curl as follows:
 
@@ -281,7 +281,7 @@ telemetry:
 
 We can see the traces at http://localhost:16686/
 
-![](3-trace.png)
+![](img/3-trace.png)
 
 ## Step 4: connecting the router to Apollo Studio
 
@@ -345,7 +345,7 @@ curl --request POST \
 
 Studio provides a changelog for our schema:
 
-![](3-trace.png)
+![](img/4-changelog.png)
 
 ## Step 5: adding a subgraph
 
@@ -377,7 +377,7 @@ This subgraph will run on the port 4002.
 We update the publish script to combine our new subgraph (or add entries to `supergraph.yml`), and now
 the router can query both subgraphs.
 
-![](5-schedule_subgraph.png)
+![](img/5-schedule_subgraph.png)
 
 The generated supergraph contains types and operations from all subgraphs:
 
@@ -601,4 +601,4 @@ curl --request POST \
 
 Jaeger will show the queries chaining together:
 
-![](6-federated_query.png)
+![](img/6-federated_query.png)
