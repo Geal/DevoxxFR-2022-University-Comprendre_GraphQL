@@ -8,6 +8,7 @@ const typeDefs = gql`
 type Speaker {
     firstName: String
     lastName: String
+    twitter: String
 }
 
 type Query {
